@@ -30,7 +30,11 @@ int main(){
     for(int i = 0; i < N; i++){
         tip = arr[i] - i; // 팁 : (원래 주려고 생각한 가격) - (받은 등수 - 1) -> i가 0부터 시작하니까 그냥 빼도 됨
         if(tip < 0)
+<<<<<<< Updated upstream
             break; // 내림차순 정렬 되어 있는 상황에서 앞사람이 이미 음수이면, 뒷사람은 자동으로 음수니까 break!
+=======
+            break; // 내림차순으로 정렬했을 때 앞사람이 이미 음수면, 뒷사람도 자동으로 음수니까 break
+>>>>>>> Stashed changes
         result += tip;
     }
 
