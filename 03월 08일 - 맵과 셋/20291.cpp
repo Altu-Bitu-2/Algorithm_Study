@@ -16,7 +16,7 @@ int main() {
     int N;
 
     vector<string> file;
-    map<string, int> m;
+    map<string, int> m; // 맵은 key값을 정렬된 상태로 저장
 
     // 입력 - 바탕화면에 있는 파일의 개수
     cin >> N;
@@ -30,7 +30,6 @@ int main() {
         }
         m[name]++;
     }
-    sort(file.begin(), file.end()); // 사전순으로 정렬
 
     // 출력
     for (auto f : m)
