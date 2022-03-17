@@ -38,11 +38,6 @@ int main() {
         }
         string b(f.rbegin(), f.rend());
         A = f + m + b;
-    }
-
-    // 출력
-    if (m.length() > 1)
-        cout << "I'm Sorry Hansoo\n";
-    else
         cout << A << "\n";
+    } else cout << "I'm Sorry Hansoo\n";
 }

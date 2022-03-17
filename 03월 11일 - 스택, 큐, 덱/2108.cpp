@@ -44,9 +44,10 @@ int main() {
     sort(freq.begin(), freq.end(), cmp);
 
     // 1. 산술평균 출력 - 소수점 이하 첫째 자리에서 반올림한 값을 출력
-    double avg = sum / N;
-    if(avg > -0.5 && avg < 0) cout << round(avg + 0.5) << '\n';
-    else cout << round(avg) << '\n';
+//    double avg = sum / N;
+//    if(avg > -0.5 && avg < 0) cout << round(avg + 0.5) << '\n';
+//    else cout << round(avg) << '\n';
+    cout << floor(sum / N + 0.5) << '\n';
 
     // 2. 중앙값 출력
     cout << v[N / 2] << '\n';

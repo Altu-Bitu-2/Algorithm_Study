@@ -22,22 +22,18 @@ int main() {
         int a, b;
         cin >> a >> b; // a는 줄의 번호, b는 그 줄에서 눌러야 하는 프렛 번호
 
-        while(!s[a].empty()){
-            if(s[a].top() > b){ // 이미 눌린 것이 눌러야 하는 프렛 번호보다 큰 경우
+        while(!s[a].empty() && s[a].top() > b){ // 이미 눌린 것이 눌러야 하는 프렛 번호보다 큰 경우
                 cnt++;
                 s[a].pop(); // 가장 위 프렛 제거
             }
-            else
-                break;
-        }
 
-        if(!s[a].empty()){
-            if(s[a].top() == b) // 이미 누른 상태
+
+        if(!s[a].empty() && s[a].top() == b) // 이미 누른 상태
                 continue;
+        else{ // 안 누른 경우
+            s[a].push(b);
+            cnt++;
         }
-
-        s[a].push(b); // 안 누른 경우
-        cnt++;
     }
 
     // 출력 - 첫째 줄에 멜로디를 연주하는데 필요한 최소 손가락 움직임
