@@ -12,6 +12,22 @@
  */
 using namespace std;
 
+void makeNum(string s){
+    long long sum = 0;
+
+    sort(s.begin(), s.end(), greater<>()); // 내림차순 정렬
+    for(auto o : s){
+        sum += o - '0';
+    }
+
+    // 출력 - 미르코가 만들고 싶어하는 수 출력, 존재하지 않으면 -1 출력
+    if (s[s.length() - 1] != '0' || sum % 3 != 0) // 끝자리가 0이 아님
+        cout << -1 << "\n";
+    else {
+        cout << s << "\n";
+    }
+}
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL);
@@ -21,17 +37,5 @@ int main(){
     string N;
     cin >> N;
 
-    long long sum = 0;
-
-    sort(N.begin(), N.end(), greater<>()); // 내림차순 정렬
-    for(auto o : N){
-        sum += o - '0';
-    }
-
-    // 출력 - 미르코가 만들고 싶어하는 수 출력, 존재하지 않으면 -1 출력
-    if (N[N.length() - 1] != '0' || sum % 3 != 0) // 끝자리가 0이 아님
-        cout << -1 << "\n";
-    else {
-        cout << N << "\n";
-    }
+    makeNum(N);
 }

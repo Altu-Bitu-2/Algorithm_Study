@@ -28,10 +28,18 @@ int main(){
 
     int temp = L / G; // 두 자연수의 곱
 
-    for(int i = 1; i <= sqrt(temp); i++) {
-        if (temp % i == 0 && GCD(i, temp / i) == 1){ // 약수의 짝이 서로소
+//    for(int i = 1; i <= sqrt(temp); i++) {
+//        if (temp % i == 0 && GCD(i, temp / i) == 1) { // 약수의 짝이 서로소
+//            a = i * G;
+//            b = (temp / i) * G;
+//        }
+//    }
+    // **최적화 -> 반복문의 시작점을 잘 설정하면 한번에 찾은 값이 최솟값
+    for(int i = sqrt(temp); i > 0; i--) {
+        if (temp % i == 0 && GCD(i, temp / i) == 1) { // 약수의 짝이 서로소
             a = i * G;
             b = (temp / i) * G;
+            break;
         }
     }
     cout << a << ' ' << b;
